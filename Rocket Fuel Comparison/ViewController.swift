@@ -31,42 +31,30 @@ class ViewController: NSViewController {
     private func updateScore(to newScore: Int) {
         score.stringValue = String(newScore)
         let red = NSColor(red: 1, green: 0, blue: 0, alpha: 1)
-        let green = NSColor(red: 0, green: 0.75, blue: 0, alpha: 1)
-        let newGreen = NSColor(red: 0, green: 1, blue: 0, alpha: 1)
+        let green = NSColor(red: 0, green: 1, blue: 0, alpha: 1)
         switch newScore {
         case let x where x < 9:
             score.textColor = red.blended(withFraction: 0, of: green)
-            priceLabel.textColor = red.blended(withFraction: 0, of: newGreen)
         case let x where x < 18:
             score.textColor = red.blended(withFraction: 0.1, of: green)
-            priceLabel.textColor = red.blended(withFraction: 0.1, of: newGreen)
         case let x where x < 27:
             score.textColor = red.blended(withFraction: 0.2, of: green)
-            priceLabel.textColor = red.blended(withFraction: 0.2, of: newGreen)
         case let x where x < 36:
             score.textColor = red.blended(withFraction: 0.3, of: green)
-            priceLabel.textColor = red.blended(withFraction: 0.3, of: newGreen)
         case let x where x < 45:
             score.textColor = red.blended(withFraction: 0.4, of: green)
-            priceLabel.textColor = red.blended(withFraction: 0.4, of: newGreen)
         case let x where x < 54:
             score.textColor = red.blended(withFraction: 0.5, of: green)
-            priceLabel.textColor = red.blended(withFraction: 0.5, of: newGreen)
         case let x where x < 63:
             score.textColor = red.blended(withFraction: 0.6, of: green)
-            priceLabel.textColor = red.blended(withFraction: 0.6, of: newGreen)
         case let x where x < 72:
             score.textColor = red.blended(withFraction: 0.7, of: green)
-            priceLabel.textColor = red.blended(withFraction: 0.7, of: newGreen)
         case let x where x < 81:
             score.textColor = red.blended(withFraction: 0.8, of: green)
-            priceLabel.textColor = red.blended(withFraction: 0.8, of: newGreen)
         case let x where x < 90:
             score.textColor = red.blended(withFraction: 0.9, of: green)
-            priceLabel.textColor = red.blended(withFraction: 0.9, of: newGreen)
         default:
             score.textColor = red.blended(withFraction: 1, of: green)
-            priceLabel.textColor = red.blended(withFraction: 1, of: newGreen)
         }
     }
     @IBOutlet weak var energyByWeight: NSSlider!
