@@ -28,6 +28,47 @@ class ViewController: NSViewController {
     private func calculateScore(energyByWeight w: Int, energyByVolume v: Int, price p: Int, ecologicalImpact e: Int) -> Int {
         return 5*w + 5*v - 10*p - 2*e //FIXME: This is total BS
     }
+    private func updateScore(to newScore: Int) {
+        score.stringValue = String(newScore)
+        let red = NSColor(red: 1, green: 0, blue: 0, alpha: 1)
+        let green = NSColor(red: 0, green: 0.75, blue: 0, alpha: 1)
+        let newGreen = NSColor(red: 0, green: 1, blue: 0, alpha: 1)
+        switch newScore {
+        case let x where x < 9:
+            score.textColor = red.blended(withFraction: 0, of: green)
+            priceLabel.textColor = red.blended(withFraction: 0, of: newGreen)
+        case let x where x < 18:
+            score.textColor = red.blended(withFraction: 0.1, of: green)
+            priceLabel.textColor = red.blended(withFraction: 0.1, of: newGreen)
+        case let x where x < 27:
+            score.textColor = red.blended(withFraction: 0.2, of: green)
+            priceLabel.textColor = red.blended(withFraction: 0.2, of: newGreen)
+        case let x where x < 36:
+            score.textColor = red.blended(withFraction: 0.3, of: green)
+            priceLabel.textColor = red.blended(withFraction: 0.3, of: newGreen)
+        case let x where x < 45:
+            score.textColor = red.blended(withFraction: 0.4, of: green)
+            priceLabel.textColor = red.blended(withFraction: 0.4, of: newGreen)
+        case let x where x < 54:
+            score.textColor = red.blended(withFraction: 0.5, of: green)
+            priceLabel.textColor = red.blended(withFraction: 0.5, of: newGreen)
+        case let x where x < 63:
+            score.textColor = red.blended(withFraction: 0.6, of: green)
+            priceLabel.textColor = red.blended(withFraction: 0.6, of: newGreen)
+        case let x where x < 72:
+            score.textColor = red.blended(withFraction: 0.7, of: green)
+            priceLabel.textColor = red.blended(withFraction: 0.7, of: newGreen)
+        case let x where x < 81:
+            score.textColor = red.blended(withFraction: 0.8, of: green)
+            priceLabel.textColor = red.blended(withFraction: 0.8, of: newGreen)
+        case let x where x < 90:
+            score.textColor = red.blended(withFraction: 0.9, of: green)
+            priceLabel.textColor = red.blended(withFraction: 0.9, of: newGreen)
+        default:
+            score.textColor = red.blended(withFraction: 1, of: green)
+            priceLabel.textColor = red.blended(withFraction: 1, of: newGreen)
+        }
+    }
     @IBOutlet weak var energyByWeight: NSSlider!
     @IBOutlet weak var energyByVolume: NSSlider!
     @IBOutlet weak var price: NSSlider!
@@ -45,7 +86,7 @@ class ViewController: NSViewController {
         energyByVolumeLabel.stringValue = String(v)
         priceLabel.stringValue = String(p)
         ecologicalImpactLabel.stringValue = String(e)
-        score.stringValue = String(calculateScore(energyByWeight: w, energyByVolume: v, price: p, ecologicalImpact: e))
+        updateScore(to: calculateScore(energyByWeight: w, energyByVolume: v, price: p, ecologicalImpact: e))
         fuelChooser.selectItem(at: -1) //deselects
     }
     @IBOutlet weak var score: NSTextField!
@@ -93,4 +134,20 @@ struct Fuel {
         }
     }
     struct InvalidFuelError: Swift.Error {}
+}
+extension NSColor {
+    static func blend(color1: NSColor, intensity1: CGFloat = 0.5, color2: NSColor, intensity2: CGFloat = 0.5) -> NSColor {
+        let total = intensity1 + intensity2
+        let l1 = intensity1/total
+        let l2 = intensity2/total
+        guard l1 > 0 else { return color2 }
+        guard l2 > 0 else { return color1 }
+        var (r1, g1, b1, a1): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
+        var (r2, g2, b2, a2): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
+        
+        color1.getRed(&r1, green: &g1, blue: &b1, alpha: &a1)
+        color2.getRed(&r2, green: &g2, blue: &b2, alpha: &a2)
+        
+        return NSColor(red: l1*r1 + l2*r2, green: l1*g1 + l2*g2, blue: l1*b1 + l2*b2, alpha: l1*a1 + l2*a2)
+    }
 }
