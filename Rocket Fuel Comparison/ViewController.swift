@@ -26,7 +26,10 @@ class ViewController: NSViewController {
     }
 
     private func calculateScore(energyByWeight w: Int, energyByVolume v: Int, price p: Int, ecologicalImpact e: Int) -> Int {
-        return 5*w + 5*v - 10*p - 2*e //FIXME: This is total BS
+        let preadjustment = (5*w) + (5*v) - (9*p) - (1*e) + (0)
+        let shift = preadjustment + 1000
+        let shrink = Double(shift)/20
+        return Int(round(shrink))
     }
     private func updateScore(to newScore: Int) {
         score.stringValue = String(newScore)
@@ -122,20 +125,4 @@ struct Fuel {
         }
     }
     struct InvalidFuelError: Swift.Error {}
-}
-extension NSColor {
-    static func blend(color1: NSColor, intensity1: CGFloat = 0.5, color2: NSColor, intensity2: CGFloat = 0.5) -> NSColor {
-        let total = intensity1 + intensity2
-        let l1 = intensity1/total
-        let l2 = intensity2/total
-        guard l1 > 0 else { return color2 }
-        guard l2 > 0 else { return color1 }
-        var (r1, g1, b1, a1): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
-        var (r2, g2, b2, a2): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
-        
-        color1.getRed(&r1, green: &g1, blue: &b1, alpha: &a1)
-        color2.getRed(&r2, green: &g2, blue: &b2, alpha: &a2)
-        
-        return NSColor(red: l1*r1 + l2*r2, green: l1*g1 + l2*g2, blue: l1*b1 + l2*b2, alpha: l1*a1 + l2*a2)
-    }
 }

@@ -95,6 +95,7 @@
 				TargetAttributes = {
 					2238A740222DF239000596C5 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -282,7 +283,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gauck.sam.Rocket-Fuel-Comparison";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -301,7 +302,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gauck.sam.Rocket-Fuel-Comparison";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
