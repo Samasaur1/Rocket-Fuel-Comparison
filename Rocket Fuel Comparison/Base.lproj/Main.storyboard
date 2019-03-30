@@ -485,14 +485,14 @@
                     <connections>
                         <outlet property="ecologicalImpact" destination="8lf-tG-N4H" id="A5U-Af-AyK"/>
                         <outlet property="ecologicalImpactLabel" destination="Qa2-VM-YC9" id="JLn-Oh-1T5"/>
-                        <outlet property="energyByVolume" destination="2MB-wc-UxP" id="0qd-2T-HM7"/>
-                        <outlet property="energyByVolumeLabel" destination="TwY-D1-7rv" id="vGY-u3-Rsp"/>
-                        <outlet property="energyByWeight" destination="6IK-LT-w88" id="lBw-nG-T50"/>
-                        <outlet property="energyByWeightLabel" destination="wFz-kG-QSh" id="0M5-JM-Jwj"/>
                         <outlet property="fuelChooser" destination="oh0-bi-k3b" id="oWQ-v1-Pqa"/>
                         <outlet property="price" destination="fl8-v9-ndv" id="bOC-xb-6Jc"/>
                         <outlet property="priceLabel" destination="X1b-BF-4gD" id="Nh1-A9-aOC"/>
                         <outlet property="score" destination="RYc-7t-Rzd" id="BbL-ex-wzc"/>
+                        <outlet property="specificImpulse" destination="2MB-wc-UxP" id="IOG-7O-bWQ"/>
+                        <outlet property="specificImpulseLabel" destination="TwY-D1-7rv" id="gCX-eN-ltn"/>
+                        <outlet property="thrust" destination="6IK-LT-w88" id="VKA-2z-qWv"/>
+                        <outlet property="thrustLabel" destination="wFz-kG-QSh" id="ibV-9q-l6K"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
