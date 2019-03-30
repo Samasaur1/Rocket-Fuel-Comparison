@@ -135,9 +135,9 @@ struct Fuel {
     let p: Int
     let e: Int
     init(specificImpulse: Int, price: Int, ecologicalImpact: Int) {
-        t = Int(round(Double(specificImpulse) * 9.80665))
-        s = specificImpulse
-        p = price
+        t = Int(round(Double(specificImpulse)/5))+3
+        s = Int(round(Double(specificImpulse)/5))
+        p = Int(round(Double(price)/15))
         e = ecologicalImpact
     }
     //TODO:
