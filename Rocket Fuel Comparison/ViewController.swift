@@ -34,10 +34,10 @@ class ViewController: NSViewController {
         }
     }
 
-    private func calculateScore(thrust t: Int, specificImpulse s: Int, price p: Int, ecologicalImpact e: Int) -> Int {
-        let preadjustment = (4*t) + (6*s) - (9*p) - (1*e) + (0)
-        let shift = preadjustment + 1000
-        let shrink = Double(shift)/2
+    private func calculateScore(thrust t: Int, specificImpulse s: Int, price p: Int) -> Int {
+        let preadjustment = (4*t) + (6*s) - (5*p)
+        let shift = preadjustment + 500
+        let shrink = Double(shift)/3*2
         return Int(round(shrink))
     }
     private func updateScore(to newScore: Int) {
@@ -96,21 +96,17 @@ class ViewController: NSViewController {
     @IBOutlet weak var thrust: NSSlider!
     @IBOutlet weak var specificImpulse: NSSlider!
     @IBOutlet weak var price: NSSlider!
-    @IBOutlet weak var ecologicalImpact: NSSlider!
     @IBOutlet weak var thrustLabel: NSTextField!
     @IBOutlet weak var specificImpulseLabel: NSTextField!
     @IBOutlet weak var priceLabel: NSTextField!
-    @IBOutlet weak var ecologicalImpactLabel: NSTextField!
     @IBAction func sliderUpdated(_ sender: Any) {
         let t = thrust.integerValue
         let s = specificImpulse.integerValue
         let p = price.integerValue
-        let e = ecologicalImpact.integerValue
         thrustLabel.stringValue = String(t)
         specificImpulseLabel.stringValue = String(s)
         priceLabel.stringValue = String(p)
-        ecologicalImpactLabel.stringValue = String(e)
-        updateScore(to: calculateScore(thrust: t, specificImpulse: s, price: p, ecologicalImpact: e))
+        updateScore(to: calculateScore(thrust: t, specificImpulse: s, price: p))
         fuelChooser.selectItem(at: -1) //deselects
     }
     @IBOutlet weak var score: NSTextField!
@@ -122,7 +118,6 @@ class ViewController: NSViewController {
         thrust.integerValue = fuel.t
         specificImpulse.integerValue = fuel.s
         price.integerValue = fuel.p
-        ecologicalImpact.integerValue = fuel.e
         let i = fuelChooser.indexOfSelectedItem
         sliderUpdated(0)
         fuelChooser.selectItem(at: i)
@@ -133,27 +128,26 @@ struct Fuel {
     let t: Int
     let s: Int
     let p: Int
-    let e: Int
-    init(specificImpulse: Int, price: Int, ecologicalImpact: Int) {
-        t = Int(round(Double(specificImpulse)/5))+3
-        s = Int(round(Double(specificImpulse)/5))
-        p = Int(round(Double(price)/15))
-        e = ecologicalImpact
+    init(specificImpulse: Int, price: Int) {
+        t = Int(round(Double(specificImpulse)/5)) + Int.random(in: -1...1) //so that they aren't always the same
+        s = Int(round(Double(specificImpulse)/5))// /500*100
+        p = Int(round(Double(price)/15))// /1500*100
     }
     //TODO:
     //FIXME:
     //MARK: - FUELS
     ///MUST BE BETWEEN 1 and 100
-    static let LoxLhydrogen = Fuel(specificImpulse: 381, price: 308, ecologicalImpact: 0)
-    static let LoxLmethane = Fuel(specificImpulse: 299, price: 103, ecologicalImpact: 0)
-    static let LoxAlcohol = Fuel(specificImpulse: 269, price: 61, ecologicalImpact: 0)
-    static let LoxKerosene = Fuel(specificImpulse: 289, price: 849, ecologicalImpact: 0)
-    static let LfLhydrogen = Fuel(specificImpulse: 400, price: 399, ecologicalImpact: 0)
-    static let fLoxKerosene = Fuel(specificImpulse: 320, price: 1050, ecologicalImpact: 0)
-    static let NTOKerosene = Fuel(specificImpulse: 267, price: 1077, ecologicalImpact: 0)
-    static let HperKerosene = Fuel(specificImpulse: 258, price: 1086, ecologicalImpact: 0)
-    static let NOHTPB = Fuel(specificImpulse: 248, price: 883, ecologicalImpact: 0)
-    static let AmmPClAlHTPB = Fuel(specificImpulse: 277, price: 71, ecologicalImpact: 0)
+    //not anymore 3/30/19-5:52PM — scaled in constructor
+    static let LoxLhydrogen = Fuel(specificImpulse: 381, price: 308)
+    static let LoxLmethane = Fuel(specificImpulse: 299, price: 103)
+    static let LoxAlcohol = Fuel(specificImpulse: 269, price: 61)
+    static let LoxKerosene = Fuel(specificImpulse: 289, price: 849)
+    static let LfLhydrogen = Fuel(specificImpulse: 400, price: 399)
+    static let fLoxKerosene = Fuel(specificImpulse: 320, price: 1050)
+    static let NTOKerosene = Fuel(specificImpulse: 267, price: 1077)
+    static let HperKerosene = Fuel(specificImpulse: 258, price: 1086)
+    static let NOHTPB = Fuel(specificImpulse: 248, price: 883)
+    static let AmmPClAlHTPB = Fuel(specificImpulse: 277, price: 71)
     //MARK: -
     init(type: String) throws {
         switch type {
