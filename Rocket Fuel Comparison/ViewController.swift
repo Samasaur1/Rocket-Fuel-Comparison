@@ -14,7 +14,12 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         fuelChooser.removeAllItems()
-        fuelChooser.addItems(withTitles: ["Solid", "Liquid"])
+        fuelChooser.addItems(withTitles: ["Liquid Oxygen + Liquid Hydrogen",
+            "Liquid Oxygen + Liquid Methane", "Liquid Oxygen + Ethanol (25% Water)",
+            "Liquid Oxygen + Kerosene", "Liquid Fluorine + Liquid Hydrogen",
+            "FLOX-70 + Kerosene", "Nitrogen Tetroxide + Kerosene", "Hydrogen Peroxide + Kerosene",
+            "Nitrous Oxide + HTPB", "Ammonium Perchlorate + Aluminum + HTPB"])
+                                          
         
         sliderUpdated(0)
         
@@ -129,8 +134,8 @@ struct Fuel {
     let s: Int
     let p: Int
     let e: Int
-    init(thrust: Int, specificImpulse: Int, price: Int, ecologicalImpact: Int) {
-        t = thrust
+    init(specificImpulse: Int, price: Int, ecologicalImpact: Int) {
+        t = Int(round(Double(specificImpulse) * 9.80665))
         s = specificImpulse
         p = price
         e = ecologicalImpact
@@ -139,15 +144,39 @@ struct Fuel {
     //FIXME:
     //MARK: - FUELS
     ///MUST BE BETWEEN 1 and 100
-    static let solid = Fuel(thrust: 1, specificImpulse: 2, price: 3, ecologicalImpact: 4)
-    static let liquid = Fuel(thrust: 5, specificImpulse: 6, price: 7, ecologicalImpact: 8)
+    static let LoxLhydrogen = Fuel(specificImpulse: 381, price: 308, ecologicalImpact: 0)
+    static let LoxLmethane = Fuel(specificImpulse: 299, price: 103, ecologicalImpact: 0)
+    static let LoxAlcohol = Fuel(specificImpulse: 269, price: 61, ecologicalImpact: 0)
+    static let LoxKerosene = Fuel(specificImpulse: 289, price: 849, ecologicalImpact: 0)
+    static let LfLhydrogen = Fuel(specificImpulse: 400, price: 399, ecologicalImpact: 0)
+    static let fLoxKerosene = Fuel(specificImpulse: 320, price: 1050, ecologicalImpact: 0)
+    static let NTOKerosene = Fuel(specificImpulse: 267, price: 1077, ecologicalImpact: 0)
+    static let HperKerosene = Fuel(specificImpulse: 258, price: 1086, ecologicalImpact: 0)
+    static let NOHTPB = Fuel(specificImpulse: 248, price: 883, ecologicalImpact: 0)
+    static let AmmPClAlHTPB = Fuel(specificImpulse: 277, price: 71, ecologicalImpact: 0)
     //MARK: -
     init(type: String) throws {
-        switch type.lowercased() {
-        case "solid":
-            self = Fuel.solid
-        case "liquid":
-            self = Fuel.liquid
+        switch type {
+        case "Liquid Oxygen + Liquid Hydrogen":
+            self = Fuel.LoxLhydrogen
+        case "Liquid Oxygen + Liquid Methane":
+            self = Fuel.LoxLmethane
+        case "Liquid Oxygen + Ethanol (25% Water)":
+            self = Fuel.LoxAlcohol
+        case "Liquid Oxygen + Kerosene":
+            self = Fuel.LoxKerosene
+        case "Liquid Fluorine + Liquid Hydrogen":
+            self = Fuel.LfLhydrogen
+        case "FLOX-70 + Kerosene":
+            self = Fuel.fLoxKerosene
+        case "Nitrogen Tetroxide + Kerosene":
+            self = Fuel.NTOKerosene
+        case "Hydrogen Peroxide + Kerosene":
+            self = Fuel.HperKerosene
+        case "Nitrous Oxide + HTPB":
+            self = Fuel.NOHTPB
+        case "Ammonium Perchlorate + Aluminum + HTPB":
+            self = Fuel.AmmPClAlHTPB
         default:
             throw InvalidFuelError()
         }
