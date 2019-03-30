@@ -15,6 +15,10 @@ class ViewController: NSViewController {
 
         fuelChooser.removeAllItems()
         fuelChooser.addItems(withTitles: ["Solid", "Liquid"])
+        
+        sliderUpdated(0)
+        
+        self.view.window?.title = "Rocket Fuel Comparison"
 
         // Do any additional setup after loading the view.
     }
@@ -28,7 +32,7 @@ class ViewController: NSViewController {
     private func calculateScore(energyByWeight w: Int, energyByVolume v: Int, price p: Int, ecologicalImpact e: Int) -> Int {
         let preadjustment = (5*w) + (5*v) - (9*p) - (1*e) + (0)
         let shift = preadjustment + 1000
-        let shrink = Double(shift)/20
+        let shrink = Double(shift)/2
         return Int(round(shrink))
     }
     private func updateScore(to newScore: Int) {
@@ -36,26 +40,50 @@ class ViewController: NSViewController {
         let red = NSColor(red: 1, green: 0, blue: 0, alpha: 1)
         let green = NSColor(red: 0, green: 1, blue: 0, alpha: 1)
         switch newScore {
-        case let x where x < 9:
-            score.textColor = red.blended(withFraction: 0, of: green)
-        case let x where x < 18:
-            score.textColor = red.blended(withFraction: 0.1, of: green)
-        case let x where x < 27:
-            score.textColor = red.blended(withFraction: 0.2, of: green)
-        case let x where x < 36:
-            score.textColor = red.blended(withFraction: 0.3, of: green)
         case let x where x < 45:
-            score.textColor = red.blended(withFraction: 0.4, of: green)
-        case let x where x < 54:
-            score.textColor = red.blended(withFraction: 0.5, of: green)
-        case let x where x < 63:
-            score.textColor = red.blended(withFraction: 0.6, of: green)
-        case let x where x < 72:
-            score.textColor = red.blended(withFraction: 0.7, of: green)
-        case let x where x < 81:
-            score.textColor = red.blended(withFraction: 0.8, of: green)
+            score.textColor = red.blended(withFraction: 0, of: green)
         case let x where x < 90:
+            score.textColor = red.blended(withFraction: 0.05, of: green)
+        case let x where x < 135:
+            score.textColor = red.blended(withFraction: 0.1, of: green)
+        case let x where x < 180:
+            score.textColor = red.blended(withFraction: 0.15, of: green)
+        case let x where x < 225:
+            score.textColor = red.blended(withFraction: 0.2, of: green)
+        case let x where x < 270:
+            score.textColor = red.blended(withFraction: 0.25, of: green)
+        case let x where x < 315:
+            score.textColor = red.blended(withFraction: 0.3, of: green)
+        case let x where x < 360:
+            score.textColor = red.blended(withFraction: 0.35, of: green)
+        case let x where x < 405:
+            score.textColor = red.blended(withFraction: 0.4, of: green)
+        case let x where x < 450:
+            score.textColor = red.blended(withFraction: 0.45, of: green)
+        case let x where x < 495:
+            score.textColor = red.blended(withFraction: 0.5, of: green)
+        case let x where x < 540:
+            score.textColor = red.blended(withFraction: 0.55, of: green)
+        case let x where x < 585:
+            score.textColor = red.blended(withFraction: 0.6, of: green)
+        case let x where x < 630:
+            score.textColor = red.blended(withFraction: 0.65, of: green)
+        case let x where x < 675:
+            score.textColor = red.blended(withFraction: 0.7, of: green)
+        case let x where x < 720:
+            score.textColor = red.blended(withFraction: 0.75, of: green)
+        case let x where x < 765:
+            score.textColor = red.blended(withFraction: 0.8, of: green)
+        case let x where x < 810:
+            score.textColor = red.blended(withFraction: 0.85, of: green)
+        case let x where x < 855:
             score.textColor = red.blended(withFraction: 0.9, of: green)
+        case let x where x < 900:
+            score.textColor = red.blended(withFraction: 0.925, of: green)
+        case let x where x < 933:
+            score.textColor = red.blended(withFraction: 0.95, of: green)
+        case let x where x < 966:
+            score.textColor = red.blended(withFraction: 0.975, of: green)
         default:
             score.textColor = red.blended(withFraction: 1, of: green)
         }

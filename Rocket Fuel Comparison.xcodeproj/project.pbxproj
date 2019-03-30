@@ -11,6 +11,7 @@
 		2238A747222DF239000596C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2238A746222DF239000596C5 /* ViewController.swift */; };
 		2238A749222DF23A000596C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2238A748222DF23A000596C5 /* Assets.xcassets */; };
 		2238A74C222DF23A000596C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2238A74A222DF23A000596C5 /* Main.storyboard */; };
+		22A29D4E224EA7E200930BCF /* FormulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A29D4D224EA7E200930BCF /* FormulaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		2238A74B222DF23A000596C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2238A74D222DF23A000596C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2238A74E222DF23A000596C5 /* Rocket_Fuel_Comparison.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rocket_Fuel_Comparison.entitlements; sourceTree = "<group>"; };
+		22A29D4D224EA7E200930BCF /* FormulaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				2238A74A222DF23A000596C5 /* Main.storyboard */,
 				2238A74D222DF23A000596C5 /* Info.plist */,
 				2238A74E222DF23A000596C5 /* Rocket_Fuel_Comparison.entitlements */,
+				22A29D4D224EA7E200930BCF /* FormulaViewController.swift */,
 			);
 			path = "Rocket Fuel Comparison";
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			files = (
 				2238A747222DF239000596C5 /* ViewController.swift in Sources */,
 				2238A745222DF239000596C5 /* AppDelegate.swift in Sources */,
+				22A29D4E224EA7E200930BCF /* FormulaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
