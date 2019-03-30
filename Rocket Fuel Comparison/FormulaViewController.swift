@@ -10,7 +10,7 @@ import Cocoa
 
 class FormulaViewController: NSViewController {
     override func viewDidLoad() {
-        explanationLabel.stringValue = "Given w is the energy by weight of a fuel, v is the energy by volume, p is the price, and e is the ecological impact, the following formula is used to calculate score:"
+        explanationLabel.stringValue = "Given t is the thrust of a fuel, s is the specific impulse, p is the price, and e is the ecological impact, the following formula is used to calculate score:"
     }
     @IBOutlet weak var explanationLabel: NSTextField!
 }

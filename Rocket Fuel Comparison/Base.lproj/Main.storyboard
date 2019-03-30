@@ -191,21 +191,21 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pQ6-4R-oOK">
-                                <rect key="frame" x="0.0" y="178" width="307" height="92"/>
+                                <rect key="frame" x="0.0" y="178" width="248" height="92"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="44Y-IT-fmw">
-                                        <rect key="frame" x="0.0" y="75" width="307" height="17"/>
+                                        <rect key="frame" x="0.0" y="75" width="248" height="17"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pg1-GI-bJ6">
-                                                <rect key="frame" x="-2" y="0.0" width="170" height="17"/>
-                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Potential Energy by Weight" id="QFv-hc-Omp">
+                                                <rect key="frame" x="-2" y="0.0" width="111" height="17"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Thrust" id="QFv-hc-Omp">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
                                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6IK-LT-w88">
-                                                <rect key="frame" x="172" y="0.0" width="96" height="19"/>
+                                                <rect key="frame" x="113" y="0.0" width="96" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="2Nb-GX-f1M"/>
                                                     <constraint firstAttribute="width" constant="92" id="csN-j8-wzx"/>
@@ -216,7 +216,7 @@
                                                 </connections>
                                             </slider>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wFz-kG-QSh">
-                                                <rect key="frame" x="272" y="0.0" width="37" height="17"/>
+                                                <rect key="frame" x="213" y="0.0" width="37" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="33" id="G6w-oO-b5A"/>
                                                     <constraint firstAttribute="height" constant="17" id="wn7-6V-o7z"/>
@@ -244,18 +244,18 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ylX-kO-NMq">
-                                        <rect key="frame" x="0.0" y="50" width="307" height="17"/>
+                                        <rect key="frame" x="0.0" y="50" width="248" height="17"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Khf-KC-cIT">
-                                                <rect key="frame" x="-2" y="0.0" width="170" height="17"/>
-                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Potential Energy by Volume" id="7cz-Z7-NHP">
+                                                <rect key="frame" x="-2" y="0.0" width="111" height="17"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Specific Impulse" id="7cz-Z7-NHP">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
                                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2MB-wc-UxP">
-                                                <rect key="frame" x="172" y="0.0" width="96" height="19"/>
+                                                <rect key="frame" x="113" y="0.0" width="96" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="92" id="eRX-8U-HEt"/>
                                                     <constraint firstAttribute="height" constant="15" id="iEQ-cE-KiH"/>
@@ -266,7 +266,7 @@
                                                 </connections>
                                             </slider>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TwY-D1-7rv">
-                                                <rect key="frame" x="272" y="0.0" width="37" height="17"/>
+                                                <rect key="frame" x="213" y="0.0" width="37" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="33" id="iqq-qv-cne"/>
                                                     <constraint firstAttribute="height" constant="17" id="oaB-mN-9UF"/>
@@ -290,10 +290,10 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qfd-Le-i20">
-                                        <rect key="frame" x="0.0" y="25" width="307" height="17"/>
+                                        <rect key="frame" x="0.0" y="25" width="248" height="17"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ieE-kB-gsr">
-                                                <rect key="frame" x="-2" y="0.0" width="170" height="17"/>
+                                                <rect key="frame" x="-2" y="0.0" width="111" height="17"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Price" id="zU5-wZ-80y">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -301,7 +301,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fl8-v9-ndv">
-                                                <rect key="frame" x="172" y="0.0" width="96" height="19"/>
+                                                <rect key="frame" x="113" y="0.0" width="96" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="4Hr-TX-ysy"/>
                                                     <constraint firstAttribute="width" constant="92" id="NjG-Ib-eor"/>
@@ -312,7 +312,7 @@
                                                 </connections>
                                             </slider>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X1b-BF-4gD">
-                                                <rect key="frame" x="272" y="0.0" width="37" height="17"/>
+                                                <rect key="frame" x="213" y="0.0" width="37" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="33" id="fTN-Ie-MQi"/>
                                                     <constraint firstAttribute="height" constant="17" id="ldn-3K-69C"/>
@@ -336,10 +336,10 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EzT-KJ-Qpc">
-                                        <rect key="frame" x="0.0" y="0.0" width="307" height="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="248" height="17"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ars-iz-246">
-                                                <rect key="frame" x="-2" y="0.0" width="170" height="17"/>
+                                                <rect key="frame" x="-2" y="0.0" width="111" height="17"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Ecological Impact" id="sya-bk-937">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -347,7 +347,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8lf-tG-N4H">
-                                                <rect key="frame" x="172" y="0.0" width="96" height="19"/>
+                                                <rect key="frame" x="113" y="0.0" width="96" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="92" id="aRB-fR-YF4"/>
                                                     <constraint firstAttribute="height" constant="15" id="rMj-dZ-cHW"/>
@@ -358,7 +358,7 @@
                                                 </connections>
                                             </slider>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qa2-VM-YC9">
-                                                <rect key="frame" x="272" y="0.0" width="37" height="17"/>
+                                                <rect key="frame" x="213" y="0.0" width="37" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="LVR-ts-YkA"/>
                                                     <constraint firstAttribute="width" constant="33" id="cKn-aX-D08"/>
@@ -501,6 +501,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Formula" width="608" height="94"/>
+        <image name="Formula" width="586" height="134"/>
     </resources>
 </document>

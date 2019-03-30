@@ -6,7 +6,7 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "Formula.png",
+      "filename" : "lightmode.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
@@ -17,7 +17,7 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "Formula-dark mode.png",
+      "filename" : "darkmode.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
