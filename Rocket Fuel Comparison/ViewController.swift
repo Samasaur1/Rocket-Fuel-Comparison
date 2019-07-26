@@ -128,6 +128,12 @@ struct Fuel {
     let t: Int
     let s: Int
     let p: Int
+    
+    /// Create a Fuel
+    ///
+    /// - Parameters:
+    ///   - specificImpulse: The specific impulse of the fuel, in seconds.
+    ///   - price: The price of the fuel, in USD/kilogram ($/kg)
     init(specificImpulse: Int, price: Int) {
         t = Int(round(Double(specificImpulse)/5)) + Int.random(in: -1...1) //so that they aren't always the same
         s = Int(round(Double(specificImpulse)/5))// /500*100
